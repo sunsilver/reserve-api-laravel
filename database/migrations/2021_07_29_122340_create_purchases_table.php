@@ -20,6 +20,7 @@ class CreatePurchasesTable extends Migration
             $table->unsignedBigInteger('ticket_id');
             $table->foreign('ticket_id')->references('id')->on('tickets');
             // 시작 날짜와 구매 날짜는 다른 것 아닌가요?
+            // 시작 날짜는 관리자가 임의로 추가했을때를 방지해서 따로 관리합니다.
             $table->date('start_date')->comment('시작 날짜');
             $table->date('end_date')->comment('종료 날짜');
             $table->tinyInteger('valid')->comment('유효성');

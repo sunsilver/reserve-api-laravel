@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('tel')->unique()->comment("연락처");
             $table->Boolean('private')->default(0)->comment("개인정보 확인 유무");
             $table->Boolean('third_party')->default(0)->comment("제3자 제공 유무");
-            // 유무인지 몇 개인지 ?
+            // Q : 유무인지 몇 개인지 ?
+            // A : 맞는다?
             $table->integer('own')->nullable()->comment("소유한 말 여부(사용자 전용)");
             $table->Boolean('permission')->default(0)->comment("권한");
             $table->rememberToken();

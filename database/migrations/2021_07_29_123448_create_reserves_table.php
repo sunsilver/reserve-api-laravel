@@ -20,9 +20,9 @@ class CreateReservesTable extends Migration
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companys');
             $table->unsignedBigInteger('purchase_id');
-            $table->foreign('purchase_id')->references('id')->on('puchases');
+            $table->foreign('purchase_id')->references('id')->on('purchases');
             $table->date('date')->comment('예약 날짜');
-            // 예약 시간은 말 그대로 예약을 신청한 시간? or 수업 시간? 수업시간일 경우 회원권 정보 table에 포함될까요?
+            // 예약 시간은 말 그대로 예약을 신청한 시간? or 수업 시간? 수업시간일 경우 회권 정보 table에 포함될까요?원
             // $table->time('time')->comment('예약 시간');
             $table->Boolean('is_reserve')->default(0)->comment('예약 승인 여부');
             $table->timestamps();
